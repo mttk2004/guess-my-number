@@ -15,7 +15,7 @@ let secretNumber = Math.trunc(Math.random() * 100 + 1);
 let scoreValue = 10;
 let highScoreValue = 0;
 
-// su kien
+// kiem tra
 check.addEventListener('click', function () {
   const guessNumber = Number(guess.value);
 
@@ -28,7 +28,7 @@ check.addEventListener('click', function () {
       highScore.textContent = highScoreValue = scoreValue;
     }
 
-    message.textContent = '✅ Đoán đúng rồi, chúc mừng bạn!!!';
+    message.textContent = '✅ Đúng rồi, chúc mừng bạn!';
 
     number.textContent = secretNumber;
 
@@ -42,6 +42,7 @@ check.addEventListener('click', function () {
   }
 });
 
+// choi lai
 again.addEventListener('click', function () {
   scoreValue = 10;
   score.textContent = scoreValue;
