@@ -21,7 +21,7 @@ check.addEventListener('click', function () {
 
   // khong phai so hoac so khong hop le
   if (!guessNumber || guessNumber < 1 || guessNumber > 100) {
-    message.textContent = '🔥 Không hợp lệ';
+    message.textContent = '❌ Không hợp lệ';
   } // doan dung
   else if (guessNumber === secretNumber) {
     if (scoreValue > highScoreValue) {
@@ -35,10 +35,17 @@ check.addEventListener('click', function () {
     document.body.style.backgroundColor = '#60b347';
   } // doan sai
   else {
-    if (scoreValue > 0) score.textContent = --scoreValue;
+    if (scoreValue > 1) {
+      score.textContent = --scoreValue;
+      message.textContent =
+        guessNumber > secretNumber ? '☝️ Quá cao' : '👇 Quá thấp';
+    } else {
+      score.textContent = 0;
 
-    message.textContent =
-      guessNumber > secretNumber ? '☝️ Quá cao' : '👇 Quá thấp';
+      message.textContent = '😌 Bạn thua cuộc!';
+
+      document.body.style.backgroundColor = '#780000';
+    }
   }
 });
 
